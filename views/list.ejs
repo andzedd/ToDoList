@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>To Do List</title>
+</head>
+<body>
+
+    <div class="box" id="heading">
+        <h1><%= kindOfDay %></h1>
+    </div>
+
+    <div class="box">
+        <% newListItem.forEach(function(item){ %>
+            <div class="item">
+                <input type="checkbox">
+                <p> <%= item %></p> 
+            </div>
+        <% }) %>
+
+        <form method="POST" action="/" class="item">
+            <input type="text" name="userInput" placeholder="New Item" autocomplete="off">
+            <button type="submit">+</button>
+        </form>
+    </div>
+
+</body>
+</html>
