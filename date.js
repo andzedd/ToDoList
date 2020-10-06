@@ -1,8 +1,13 @@
-module.exports = getDate;
+//exports = short version of modules.exportsm it works the same
 
-function getDate(){
-    let options = { weekday: 'long', month: 'long', day: 'numeric'};
-    let today = new Date();
-    let day = today.toLocaleDateString("en-US", options);
-    return day;
-}
+exports.getDate = function(){
+    const options = { weekday: 'long', month: 'long', day: 'numeric'};
+    const today = new Date();
+    return today.toLocaleDateString("en-US", options);
+};
+
+exports.getDay = function(){
+    const options = { weekday: 'long'};
+    const today = new Date();
+    return today.toLocaleDateString("en-US", options);
+};
