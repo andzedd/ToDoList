@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const date = require(__dirname + "/date.js")
 
 const app = express();
 const port = 3000;
@@ -12,11 +13,8 @@ app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
 app.get("/", function(req,res){
-    let options = { weekday: 'long', month: 'long', day: 'numeric'};
-    let today = new Date();
-    let day = today.toLocaleDateString("en-US", options);
-        
-    res.render('list', {listTitle: day, newListItems: items})
+            
+    res.render('list', {listTitle: date(), newListItems: items})
 })
 
 app.get("/work", function(req,res){
